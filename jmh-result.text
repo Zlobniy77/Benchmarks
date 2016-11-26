@@ -1,0 +1,7 @@
+Benchmark                        Mode  Samples  Score   Error  Units
+t.TestBench2.baseTest          sample   235670  0,034 ± 0,006  us/op
+t.TestBench2.emptyTest         sample   231707  0,016 ± 0,001  us/op
+t.TestBench2.measureAvgTime    sample   196951  0,083 ± 0,003  us/op
+t.TestBench2.plainTest         sample   210828  0,037 ± 0,006  us/op
+t.TestBench2.test2             sample   311669  0,167 ± 0,042  us/op
+t.TestBench2.volatileTest      sample   177772  0,044 ± 0,003  us/op
