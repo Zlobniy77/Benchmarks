@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="com.netflix.atlas:atlas-jmh:1.4.4" type="repository">
+    <properties maven-id="com.netflix.atlas:atlas-jmh:1.4.4" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/netflix/atlas/atlas-jmh/1.4.4/atlas-jmh-1.4.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.11.5/scala-library-2.11.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/netflix/atlas/atlas-core/1.4.4/atlas-core-1.4.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/netflix/atlas/atlas-config/1.4.4/atlas-config-1.4.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/typesafe/scala-logging/scala-logging_2.11/3.1.0/scala-logging_2.11-3.1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-reflect/2.11.5/scala-reflect-2.11.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/netflix/spectator/spectator-api/0.19/spectator-api-0.19.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/typesafe/config/1.2.1/config-1.2.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/15.0/guava-15.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scoverage/scalac-scoverage-runtime_2.11/1.0.4/scalac-scoverage-runtime_2.11-1.0.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scoverage/scalac-scoverage-plugin_2.11/1.0.4/scalac-scoverage-plugin_2.11-1.0.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/modules/scala-xml_2.11/1.0.1/scala-xml_2.11-1.0.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjdk/jmh/jmh-core/1.3.1/jmh-core-1.3.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjdk/jmh/jmh-generator-bytecode/1.3.1/jmh-generator-bytecode-1.3.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjdk/jmh/jmh-generator-reflection/1.3.1/jmh-generator-reflection-1.3.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjdk/jmh/jmh-generator-asm/1.3.1/jmh-generator-asm-1.3.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
