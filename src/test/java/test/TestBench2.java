@@ -24,7 +24,7 @@ public class TestBench2 {
     volatile double x = Math.PI;
 
     private Map<String, String> map;
-    private List<Integer> milion;
+    private List<Integer> million;
 
     int v = 1;
     volatile int b = 1;
@@ -36,7 +36,7 @@ public class TestBench2 {
             map.put( "i", "" + i );
         }
 
-        milion = Stream.generate(new Random()::nextInt)
+        million = Stream.generate(new Random()::nextInt)
                 .limit(1000000)
                 .map( Integer::valueOf )
                 .collect( Collectors.toList() );
@@ -103,7 +103,7 @@ public class TestBench2 {
     @BenchmarkMode( Mode.AverageTime )
     @OutputTimeUnit( TimeUnit.SECONDS )
     public void test3() throws InterruptedException{
-        milion.stream()
+        million.stream()
                 .map( v -> Integer.valueOf( v ) )
                 .collect( Collectors.toList() ).size();
         //System.out.println( value );
