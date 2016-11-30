@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Created by Aleksandr on 16.10.2016.
+ * Created by Zlobniy on 16.10.2016.
  */
 //@State(Scope.Thread)
 @State( Scope.Benchmark )
@@ -49,7 +49,6 @@ public class TestBench2 {
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
     public int baseTest() throws InterruptedException{
         return 1;
-        //System.out.println( value );
     }
 
 
@@ -59,7 +58,6 @@ public class TestBench2 {
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
     public int plainTest() throws InterruptedException{
         return v++;
-        //System.out.println( value );
     }
 
 
@@ -68,7 +66,6 @@ public class TestBench2 {
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
     public int volatileTest() throws InterruptedException{
         return b++;
-        //System.out.println( value );
     }
 
     @Benchmark
@@ -76,48 +73,38 @@ public class TestBench2 {
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
     public void emptyTest() throws InterruptedException{
         int a = 1;
-        //System.out.println( value );
     }
 
 
     @Benchmark
     @BenchmarkMode( Mode.AverageTime )
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
-    public void measureAvgTime() throws InterruptedException{
-        long value = map.entrySet().stream()
-                .count();
-        //System.out.println( value );
+    public void streamMapCount() throws InterruptedException{
+        map.entrySet().stream().count();
     }
 
     @Benchmark
     @BenchmarkMode( Mode.AverageTime )
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
-    public void test2() throws InterruptedException{
+    public void streamMapToMap() throws InterruptedException{
         map.entrySet().stream()
                 .map( v -> Integer.valueOf( v.getValue() ) )
                 .collect( Collectors.toList() ).size();
-        //System.out.println( value );
     }
 
     @Benchmark
     @BenchmarkMode( Mode.AverageTime )
     @OutputTimeUnit( TimeUnit.SECONDS )
-    public void test3() throws InterruptedException{
+    public void streamMap() throws InterruptedException{
         million.stream()
                 .map( v -> Integer.valueOf( v ) )
                 .collect( Collectors.toList() ).size();
-        //System.out.println( value );
     }
 
     @Benchmark
     @BenchmarkMode( Mode.AverageTime )
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
     public void measureShared( TestBench2 state ){
-        // All benchmark threads will call in this method.
-        //
-        // Since BenchmarkState is the Scope.Benchmark, all threads
-        // will share the state instance, and we will end up measuring
-        // shared case.
         state.x++;
     }
 
