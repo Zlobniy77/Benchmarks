@@ -1,7 +1,11 @@
-Benchmark                        Mode  Samples  Score   Error  Units
-t.TestBench2.baseTest          sample   235670  0,034 ± 0,006  us/op
-t.TestBench2.emptyTest         sample   231707  0,016 ± 0,001  us/op
-t.TestBench2.measureAvgTime    sample   196951  0,083 ± 0,003  us/op
-t.TestBench2.plainTest         sample   210828  0,037 ± 0,006  us/op
-t.TestBench2.test2             sample   311669  0,167 ± 0,042  us/op
-t.TestBench2.volatileTest      sample   177772  0,044 ± 0,003  us/op
+Benchmark                                   Mode  Samples    Score   Error  Units
+t.BenchmarkCollections.baseTest             avgt        5    2,137 ± 0,089  ns/op
+t.BenchmarkCollections.emptyTest            avgt        5    0,322 ± 0,010  ns/op
+t.BenchmarkCollections.measureShared        avgt        5    7,986 ± 0,095  ns/op
+t.BenchmarkCollections.oldObjectToMap       avgt        5  144,822 ± 4,147  ns/op
+t.BenchmarkCollections.streamObjectToMap    avgt        5  185,883 ± 3,575  ns/op
+t.BenchmarkCollections.plainTest            avgt        5    2,545 ± 0,101  ns/op
+t.BenchmarkCollections.streamMap            avgt        5    0,012 ± 0,001   s/op
+t.BenchmarkCollections.streamMapCount       avgt        5   45,703 ± 1,817  ns/op
+t.BenchmarkCollections.streamMapToMap       avgt        5  100,641 ± 4,338  ns/op
+t.BenchmarkCollections.volatileTest         avgt        5    8,777 ± 0,444  ns/op
