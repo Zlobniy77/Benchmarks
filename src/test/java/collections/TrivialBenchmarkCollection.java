@@ -1,5 +1,6 @@
 package collections;
 
+import common.SetupBenchmarks;
 import entity.Person;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
@@ -18,35 +19,7 @@ import java.util.stream.Stream;
  */
 //@State(Scope.Thread)
 @State( Scope.Benchmark )
-public class TrivialBenchmarkCollection {
-
-    volatile double x = Math.PI;
-
-    private Map<String, String> map;
-    private List<Integer> million;
-    private List<Person> someData;
-
-    int v = 1;
-    volatile int b = 1;
-
-    @Setup
-    public void setup() throws Exception{
-        map = new HashMap<>();
-        for( int i = 0; i < 1000; i++ ){
-            map.put( "i", "" + i );
-        }
-
-        million = Stream.generate(new Random()::nextInt)
-                .limit(1000000)
-                .map( Integer::valueOf )
-                .collect( Collectors.toList() );
-
-        someData = new ArrayList<>(  );
-        someData.add( new Person( "Vasia", "Pupkin", LocalDate.now() ) );
-        someData.add( new Person( "Petia", "Pupkin", LocalDate.now() ) );
-        someData.add( new Person( "Petia", "Ivanov", LocalDate.now() ) );
-
-    }
+public class TrivialBenchmarkCollection extends SetupBenchmarks {
 
     @Benchmark
     @BenchmarkMode( Mode.AverageTime )
@@ -83,7 +56,7 @@ public class TrivialBenchmarkCollection {
     @BenchmarkMode( Mode.AverageTime )
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
     public void oldObjectToMap() throws InterruptedException{
-        final List<String> names = new ArrayList<>();
+        final List<String> names = new ArrayList<>( someData.size() );
         for( Person s : someData ){
             names.add( s.getName() + "_" + s.getSurName() );
         }

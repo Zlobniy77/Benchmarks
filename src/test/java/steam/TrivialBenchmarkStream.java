@@ -1,7 +1,7 @@
 package steam;
 
+import common.SetupBenchmarks;
 import entity.Order;
-import entity.Person;
 import entity.Product;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
@@ -9,45 +9,16 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
-import java.time.LocalDate;
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by Zlobniy on 02.12.2016.
  */
 @State( Scope.Benchmark )
-public class TrivialBenchmarkStream {
-
-    private final List<Order> orders = new ArrayList<>(  );
-    private Map<String, String> map;
-    private List<Integer> million;
-    private List<Person> someData;
-
-    @Setup
-    public void setup() throws Exception{
-
-        orders.add( new Order( new Product( "collections 1" ), new Product( "collections 2" ) ) );
-        orders.add( new Order( new Product( "collections 3" ), new Product( "collections 4" ), new Product( "collections 5" ) ) );
-
-        map = new HashMap<>();
-        for( int i = 0; i < 1000; i++ ){
-            map.put( "i", "" + i );
-        }
-
-        million = Stream.generate(new Random()::nextInt)
-                .limit(1000000)
-                .map( Integer::valueOf )
-                .collect( Collectors.toList() );
-
-        someData = new ArrayList<>(  );
-        someData.add( new Person( "Vasia", "Pupkin", LocalDate.now() ) );
-        someData.add( new Person( "Petia", "Pupkin", LocalDate.now() ) );
-        someData.add( new Person( "Petia", "Ivanov", LocalDate.now() ) );
-
-    }
+public class TrivialBenchmarkStream extends SetupBenchmarks {
 
 
     @Benchmark
@@ -102,7 +73,10 @@ public class TrivialBenchmarkStream {
     @BenchmarkMode( Mode.AverageTime )
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
     public void streamObjectToMap() throws InterruptedException{
-        someData.stream().map( s -> s.getName() + "_" + s.getSurName() ).collect( Collectors.toList() );
+        someData.stream()
+                .parallel()
+                .map( s -> s.getName() + "_" + s.getSurName() )
+                .collect( Collectors.toList() );
     }
 
     @Benchmark

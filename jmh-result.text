@@ -6,3 +6,15 @@ s.TrivialBenchmarkStream.streamMap               avgt        5    0,013 ± 0,001
 s.TrivialBenchmarkStream.streamMapCount          avgt        5   49,411 ± 7,737  ns/op
 s.TrivialBenchmarkStream.streamMapToMap          avgt        5  105,530 ± 3,032  ns/op
 s.TrivialBenchmarkStream.streamObjectToMap       avgt        5  188,657 ± 6,856  ns/op
+
+c.TrivialBenchmarkCollection.oldObjectToMap      avgt        5  141,824 ± 3,960  ns/op
+
+// clear
+c.TrivialBenchmarkCollection.oldObjectToMap      avgt        5  57159,299 ± 4495,906  ns/op
+s.TrivialBenchmarkStream.streamObjectToMap       avgt        5  56781,509 ± 1868,813  ns/op
+
+// add size for new ArrayList( size );
+c.TrivialBenchmarkCollection.oldObjectToMap      avgt        5  54557,989 ± 7568,103  ns/op
+
+// parallel stream
+s.TrivialBenchmarkStream.streamObjectToMap       avgt        5  31416,223 ± 3358,889  ns/op
