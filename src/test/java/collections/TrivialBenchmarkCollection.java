@@ -1,4 +1,4 @@
-package test;
+package collections;
 
 import entity.Person;
 import org.openjdk.jmh.annotations.*;
@@ -18,7 +18,7 @@ import java.util.stream.Stream;
  */
 //@State(Scope.Thread)
 @State( Scope.Benchmark )
-public class BenchmarkCollections {
+public class TrivialBenchmarkCollection {
 
     volatile double x = Math.PI;
 
@@ -79,30 +79,6 @@ public class BenchmarkCollections {
         int a = 1;
     }
 
-
-    @Benchmark
-    @BenchmarkMode( Mode.AverageTime )
-    @OutputTimeUnit( TimeUnit.NANOSECONDS )
-    public void streamMapCount() throws InterruptedException{
-        map.entrySet().stream().count();
-    }
-
-    @Benchmark
-    @BenchmarkMode( Mode.AverageTime )
-    @OutputTimeUnit( TimeUnit.NANOSECONDS )
-    public void streamMapToMap() throws InterruptedException{
-        map.entrySet().stream()
-                .map( v -> Integer.valueOf( v.getValue() ) )
-                .collect( Collectors.toList() ).size();
-    }
-
-    @Benchmark
-    @BenchmarkMode( Mode.AverageTime )
-    @OutputTimeUnit( TimeUnit.NANOSECONDS )
-    public void streamObjectToMap() throws InterruptedException{
-        final List<String> names = someData.stream().map( s -> s.getName() + "_" + s.getSurName() ).collect( Collectors.toList() );
-    }
-
     @Benchmark
     @BenchmarkMode( Mode.AverageTime )
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
@@ -115,24 +91,15 @@ public class BenchmarkCollections {
 
     @Benchmark
     @BenchmarkMode( Mode.AverageTime )
-    @OutputTimeUnit( TimeUnit.SECONDS )
-    public void streamMap() throws InterruptedException{
-        million.stream()
-                .map( v -> Integer.valueOf( v ) )
-                .collect( Collectors.toList() ).size();
-    }
-
-    @Benchmark
-    @BenchmarkMode( Mode.AverageTime )
     @OutputTimeUnit( TimeUnit.NANOSECONDS )
-    public void measureShared( BenchmarkCollections state ){
+    public void measureShared( TrivialBenchmarkCollection state ){
         state.x++;
     }
 
     public static void main( String[] args ) throws RunnerException{
 
         Options opt = new OptionsBuilder()
-                .include( BenchmarkCollections.class.getSimpleName() )
+                .include( TrivialBenchmarkCollection.class.getSimpleName() )
                 .forks( 1 )
                 .warmupIterations( 5 )
                 .measurementIterations( 5 )

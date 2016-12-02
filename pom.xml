@@ -42,7 +42,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jmh.version>1.11.2</jmh.version>
         <javac.target>1.8</javac.target>
-        <start-class>test.BenchmarkCollections</start-class>
+        <start-class>collections.TrivialBenchmarkCollection</start-class>
         <uberjar.name>benchmarks</uberjar.name>
     </properties>
 

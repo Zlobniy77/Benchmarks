@@ -1,11 +1,8 @@
-Benchmark                                   Mode  Samples    Score   Error  Units
-t.BenchmarkCollections.baseTest             avgt        5    2,137 ± 0,089  ns/op
-t.BenchmarkCollections.emptyTest            avgt        5    0,322 ± 0,010  ns/op
-t.BenchmarkCollections.measureShared        avgt        5    7,986 ± 0,095  ns/op
-t.BenchmarkCollections.oldObjectToMap       avgt        5  144,822 ± 4,147  ns/op
-t.BenchmarkCollections.streamObjectToMap    avgt        5  185,883 ± 3,575  ns/op
-t.BenchmarkCollections.plainTest            avgt        5    2,545 ± 0,101  ns/op
-t.BenchmarkCollections.streamMap            avgt        5    0,012 ± 0,001   s/op
-t.BenchmarkCollections.streamMapCount       avgt        5   45,703 ± 1,817  ns/op
-t.BenchmarkCollections.streamMapToMap       avgt        5  100,641 ± 4,338  ns/op
-t.BenchmarkCollections.volatileTest         avgt        5    8,777 ± 0,444  ns/op
+Benchmark                                        Mode  Samples    Score   Error  Units
+s.TrivialBenchmarkStream.ordersToArray           avgt        5  109,000 ± 3,938  ns/op
+s.TrivialBenchmarkStream.ordersToList            avgt        5   87,120 ± 3,893  ns/op
+s.TrivialBenchmarkStream.ordersToListProducts    avgt        5  157,666 ± 7,447  ns/op
+s.TrivialBenchmarkStream.streamMap               avgt        5    0,013 ± 0,001   s/op
+s.TrivialBenchmarkStream.streamMapCount          avgt        5   49,411 ± 7,737  ns/op
+s.TrivialBenchmarkStream.streamMapToMap          avgt        5  105,530 ± 3,032  ns/op
+s.TrivialBenchmarkStream.streamObjectToMap       avgt        5  188,657 ± 6,856  ns/op
